@@ -18,6 +18,7 @@
   "build": {
     "appId": "com.cineanime.studio",
     "productName": "CineAnime Studio",
+    "asar": false,
     "files": [
       "main.js",
       "backend/**/*",
