@@ -42,16 +42,50 @@ Diseñado para conectar fotogramas continuos:
 
 ---
 
-### 🌐 Despliegue en la Nube (Enlace Web Público Gratis)
+## 💻 Aplicación de Escritorio (Descargable para Mac y Windows)
 
-Puedes tener tu propia dirección web pública (ej. `https://cineanime.onrender.com`) para usar la herramienta desde cualquier celular, tablet o computadora sin abrir ninguna terminal:
+¡**CineAnime Studio** ahora es una **aplicación de escritorio nativa** con Electron!
 
-1. Entra a **[Render.com](https://render.com)** y crea una cuenta gratuita con tu usuario de **GitHub**.
-2. Pulsa en **"New +"** ➜ **"Web Service"**.
-3. Selecciona tu repositorio **`animaciones`**.
-4. Render detectará automáticamente el archivo `Dockerfile`.
-5. En el plan selecciona **"Free"** y haz clic en **"Create Web Service"**.
-6. ¡Listo! En unos minutos Render te proporcionará tu URL pública permanente para que la abras y compartas donde quieras.
+### 📥 Descargar la Aplicación Instalable
+Puedes encontrar los instaladores listos para usar en la sección de **[Releases de GitHub](https://github.com/urielcortes012-boop/animaciones/releases)**:
+- **Mac (.dmg)**: `CineAnime Studio-1.0.0.dmg` (o `.zip`)
+- **Windows (.exe)**: `CineAnime Studio-Setup-1.0.0.exe`
+
+---
+
+### 🛠️ Comandos de Construcción y Ejecución Local
+
+Si deseas probarla o compilarla tú mismo en cualquier computadora:
+
+1. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+
+2. **Abrir la aplicación en modo desarrollo**:
+   ```bash
+   npm start
+   ```
+
+3. **Generar instalador para Mac (.dmg)**:
+   ```bash
+   npm run build:mac
+   ```
+   *(El instalador generado se guardará en la carpeta `dist/`)*
+
+4. **Generar instalador para Windows (.exe)**:
+   ```bash
+   npm run build:win
+   ```
+   *(El instalador generado se guardará en la carpeta `dist/`)*
+
+---
+
+### 🌐 Despliegue en la Nube (Opcional - Enlace Web)
+
+Si también prefieres acceder vía navegador web desde cualquier dispositivo sin instalar nada:
+1. Entra a **[Render.com](https://render.com)** y conecta tu repositorio `animaciones`.
+2. Selecciona **Web Service** gratuito; se usará el `Dockerfile` automáticamente.
 
 ---
 

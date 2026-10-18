@@ -17,3 +17,7 @@ uploads/*
 .env
 venv/
 env/
+
+# Node & Desktop packaging
+node_modules/
+dist/
