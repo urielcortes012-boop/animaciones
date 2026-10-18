@@ -28,18 +28,30 @@ Diseñado para conectar fotogramas continuos:
 
 ## 🚀 Cómo Iniciar la Aplicación
 
+### Modo Local (Tu computadora)
 1. **Abrir la terminal en la carpeta del proyecto**:
    ```bash
    cd /Users/urielcortes/animaciones/animaciones
    ```
-
 2. **Iniciar el servidor**:
    ```bash
    ./start.sh
    ```
-
 3. **Abrir en tu navegador**:
    Visita: **[http://localhost:8000](http://localhost:8000)**
+
+---
+
+### 🌐 Despliegue en la Nube (Enlace Web Público Gratis)
+
+Puedes tener tu propia dirección web pública (ej. `https://cineanime.onrender.com`) para usar la herramienta desde cualquier celular, tablet o computadora sin abrir ninguna terminal:
+
+1. Entra a **[Render.com](https://render.com)** y crea una cuenta gratuita con tu usuario de **GitHub**.
+2. Pulsa en **"New +"** ➜ **"Web Service"**.
+3. Selecciona tu repositorio **`animaciones`**.
+4. Render detectará automáticamente el archivo `Dockerfile`.
+5. En el plan selecciona **"Free"** y haz clic en **"Create Web Service"**.
+6. ¡Listo! En unos minutos Render te proporcionará tu URL pública permanente para que la abras y compartas donde quieras.
 
 ---
 
