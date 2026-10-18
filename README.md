@@ -25,7 +25,7 @@ Descarga la versión lista para instalar en tu computadora:
 | **🍎 macOS** | Versión 1.0.0 | `.dmg` | [**Descargar para Mac**](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio-1.0.0.dmg) *(~92 MB)* |
 | **🪟 Windows** | Versión 1.0.0 | `.exe` | [**Descargar para Windows**](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio.Setup.1.0.0.exe) *(~85 MB)* |
 
-> 📌 También puedes ver todas las versiones y notas de actualización en la [sección de Releases](https://github.com/urielcortes012-boop/animaciones/releases).
+> 📌 **Descarga directa**: También puedes descargar los archivos haciendo clic derecho en el enlace y seleccionando *"Guardar enlace como..."*, o directamente desde la página oficial: **[CineAnime Studio v1.0.0 en Releases](https://github.com/urielcortes012-boop/animaciones/releases/tag/v1.0.0)**.
 
 ---
 
