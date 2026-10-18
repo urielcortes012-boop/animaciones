@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Output and temporary generation files
+outputs/*
+!outputs/.gitkeep
+
+uploads/*
+!uploads/.gitkeep
+
+# macOS metadata
+.DS_Store
+
+# Environment / local configs
+.env
+venv/
+env/

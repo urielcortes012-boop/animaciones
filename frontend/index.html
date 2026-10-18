@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineAnime Studio - Animador Anime Cinemático</title>
+  <meta name="description" content="Herramienta especializada de animación anime en estilo seinen cinemático con soporte para imágenes consecutivas y animación de escenas.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>CineAnime <span>Studio</span></h1>
+          <p>Estudio de Animación • Estilo Anime Seinen Cinemático</p>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <div class="style-anchor-pill">
+          <span class="pulse-dot"></span>
+          <span>Estilo Fijo: Anime Seinen / Drama Realista</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Style Anchor Showcase Card -->
+    <section class="style-showcase-card glass-card">
+      <div class="showcase-content">
+        <div class="showcase-thumb-box">
+          <img src="/assets/reference_anime.jpg" alt="Estilo Anime de Referencia" class="showcase-img" id="showcaseImg">
+          <span class="showcase-badge">ESTILO DE REFERENCIA</span>
+        </div>
+        <div class="showcase-info">
+          <h2>Estética Visual Anclada</h2>
+          <p>La herramienta opera exclusivamente con el tratamiento visual de esta imagen: <strong>iluminación cenital dramática</strong>, paleta de <strong>tonos tierra y grises desaturados</strong>, sombras volumétricas suaves, grano analógico de 35mm y atmósfera psicológica madura.</p>
+          <div class="tags-row">
+            <span class="style-tag">Iluminación Cenital</span>
+            <span class="style-tag">Atmósfera Seinen</span>
+            <span class="style-tag">Luz Cálida de Bombilla</span>
+            <span class="style-tag">Partículas Suspendidas</span>
+            <span class="style-tag">Cámara 3D Ken Burns</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace -->
+    <main class="workspace-grid">
+      
+      <!-- Left Column: Animation Controls -->
+      <section class="control-panel">
+        
+        <!-- Mode Switcher Tabs -->
+        <div class="mode-tabs glass-card">
+          <button class="mode-tab active" id="tabModeCinematic" data-mode="cinematic">
+            <span class="tab-icon">✨</span>
+            <div class="tab-text">
+              <strong>Animación Cinemática Viva</strong>
+              <small>Luz oscilante, partículas y cámara 3D</small>
+            </div>
+          </button>
+          <button class="mode-tab" id="tabModeSequence" data-mode="sequence">
+            <span class="tab-icon">🎞️</span>
+            <div class="tab-text">
+              <strong>Imágenes Consecutivas</strong>
+              <small>Secuencia de fotogramas e interpolación</small>
+            </div>
+          </button>
+        </div>
+
+        <!-- Mode 1: Cinematic Scene Animation Panel -->
+        <div class="glass-card mode-panel active" id="panelCinematic">
+          <div class="card-header">
+            <h3>Animar Escena con Efectos Cinemáticos Vivos</h3>
+            <span class="badge-subtle">Imagen Base</span>
+          </div>
+
+          <div class="image-source-box">
+            <div class="selected-source-preview">
+              <img src="/assets/reference_anime.jpg" id="cinematicPreviewImg" alt="Vista previa">
+              <div class="source-overlay">
+                <span id="sourceLabel">Imagen de Referencia Original</span>
+                <button id="changeImageBtn" class="pill-btn mini-pill">Cambiar Imagen</button>
+                <input type="file" id="singleImageInput" accept="image/*" style="display: none;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Animation Parameters -->
+          <div class="params-box">
+            <div class="param-row">
+              <div class="param-label">
+                <strong>Movimiento de Cámara (Ken Burns)</strong>
+                <small>Zoom cinemático suave y continuo en bucle</small>
+              </div>
+              <select id="cameraIntensitySelect" class="custom-select">
+                <option value="0.04">Sutil (Recomendado - 1.04x)</option>
+                <option value="0.08">Medio (1.08x)</option>
+                <option value="0.12">Dinámico (1.12x)</option>
+                <option value="0.00">Cámara Fija (Sin zoom)</option>
+              </select>
+            </div>
+
+            <div class="param-row">
+              <div class="param-label">
+                <strong>Duración del Bucle</strong>
+                <small>Tiempo de ciclo continuo para loop perfecto</small>
+              </div>
+              <select id="cinematicDurationSelect" class="custom-select">
+                <option value="4.0">4 Segundos (Loop estándar)</option>
+                <option value="3.0">3 Segundos</option>
+                <option value="6.0">6 Segundos (Pausado y atmosférico)</option>
+              </select>
+            </div>
+
+            <div class="param-toggles-grid">
+              <label class="toggle-card">
+                <input type="checkbox" id="toggleLightFlicker" checked>
+                <div class="toggle-content">
+                  <span class="toggle-icon">💡</span>
+                  <div>
+                    <strong>Luz Cenital Oscilante</strong>
+                    <small>Pulsación sutil de la bombilla</small>
+                  </div>
+                </div>
+              </label>
+
+              <label class="toggle-card">
+                <input type="checkbox" id="toggleParticles" checked>
+                <div class="toggle-content">
+                  <span class="toggle-icon">✨</span>
+                  <div>
+                    <strong>Polvo en Haz de Luz</strong>
+                    <small>Motas flotantes en la iluminación</small>
+                  </div>
+                </div>
+              </label>
+
+              <label class="toggle-card">
+                <input type="checkbox" id="toggleFilmGrain" checked>
+                <div class="toggle-content">
+                  <span class="toggle-icon">🎞️</span>
+                  <div>
+                    <strong>Grano de Película 35mm</strong>
+                    <small>Textura analógica anime</small>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button id="generateCinematicBtn" class="hero-action-btn">
+            <span class="btn-icon">✨</span>
+            <span>Generar Animación Cinemática</span>
+          </button>
+        </div>
+
+        <!-- Mode 2: Consecutive Images Sequence Panel -->
+        <div class="glass-card mode-panel" id="panelSequence">
+          <div class="card-header">
+            <h3>Animar Secuencia de Imágenes Consecutivas</h3>
+            <button id="loadSampleSeqBtn" class="pill-btn mini-pill">✨ Cargar Ejemplo (4 Fotogramas)</button>
+          </div>
+
+          <!-- Dropzone for Multiple Frames -->
+          <div class="sequence-dropzone" id="sequenceDropzone">
+            <div class="dropzone-inner">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+                <line x1="17" y1="17" x2="22" y2="17"></line>
+                <line x1="17" y1="7" x2="22" y2="7"></line>
+              </svg>
+              <p>Arrastra aquí varias imágenes consecutivas o haz clic para seleccionarlas</p>
+              <small>Formatos: JPG, PNG, WEBP (Ordenadas por nombre de archivo)</small>
+              <input type="file" id="sequenceFilesInput" multiple accept="image/*" style="display: none;">
+            </div>
+          </div>
+
+          <!-- Filmstrip Timeline -->
+          <div class="filmstrip-box">
+            <div class="filmstrip-header">
+              <span>Tira de Fotogramas (<span id="frameCountLabel">0</span> imágenes)</span>
+              <button id="clearFramesBtn" class="text-link-btn">Vaciar</button>
+            </div>
+            <div class="filmstrip-track" id="filmstripTrack">
+              <div class="track-empty">Carga o arrastra imágenes consecutivas para ver la tira de fotogramas.</div>
+            </div>
+          </div>
+
+          <!-- Sequence Controls -->
+          <div class="params-box">
+            <div class="param-row">
+              <div class="param-label">
+                <strong>Velocidad de Cuadros (FPS)</strong>
+                <small>Ritmo de animación tradicional o fluido</small>
+              </div>
+              <select id="sequenceFpsSelect" class="custom-select">
+                <option value="6">6 FPS (Boceto / Anime pausado)</option>
+                <option value="8">8 FPS (Anime clásico en 3s)</option>
+                <option value="12" selected>12 FPS (Estándar Anime en 2s)</option>
+                <option value="16">16 FPS (Movimiento dinámico)</option>
+                <option value="24">24 FPS (Cinemático fluido)</option>
+              </select>
+            </div>
+
+            <div class="param-row">
+              <div class="param-label">
+                <strong>Modo de Reproducción</strong>
+                <small>Cómo se enlaza la secuencia continua</small>
+              </div>
+              <select id="sequenceLoopModeSelect" class="custom-select">
+                <option value="loop">Bucle Continuo (1 ➜ 2 ➜ 3 ➜ 4 ➜ 1)</option>
+                <option value="ping_pong">Ping-Pong / Ida y Vuelta (1 ➜ 2 ➜ 3 ➜ 4 ➜ 3 ➜ 2 ➜ 1)</option>
+              </select>
+            </div>
+
+            <div class="param-row">
+              <div class="param-label">
+                <strong>Tipo de Transición entre Cuadros</strong>
+                <small>Tratamiento de dibujo tradicional o interpolación</small>
+              </div>
+              <select id="sequenceInterpolationSelect" class="custom-select">
+                <option value="none">Corte Directo (Animación Tradicional Cel)</option>
+                <option value="blend">Suavizado de Movimiento (Frame Blending)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="generateSequenceBtn" class="hero-action-btn" disabled>
+            <span class="btn-icon">🎞️</span>
+            <span>Animar Secuencia de Imágenes</span>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Player & Exporter -->
+      <section class="player-panel">
+        <div class="glass-card player-card">
+          <div class="card-header">
+            <div class="title-with-icon">
+              <span class="player-status-dot" id="playerStatusDot"></span>
+              <div>
+                <h2>Reproductor de Animación</h2>
+                <p id="playerSubtitle">Genera una animación para ver el resultado en bucle</p>
+              </div>
+            </div>
+
+            <div class="download-actions" id="downloadActions" style="display: none;">
+              <a id="downloadMp4Btn" href="#" class="pill-btn primary-pill" download="anime_animation.mp4">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Descargar MP4
+              </a>
+              <a id="downloadGifBtn" href="#" class="pill-btn secondary-pill" download="anime_animation.gif">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Descargar GIF
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Viewport Container -->
+          <div class="viewport-box">
+            <video id="mainVideoPlayer" loop playsinline muted>
+              <source id="mainVideoSource" src="" type="video/mp4">
+            </video>
+
+            <div class="viewport-placeholder" id="viewportPlaceholder">
+              <div class="ph-icon">🎬</div>
+              <h3>Tu animación aparecerá aquí</h3>
+              <p>Elige el modo cinemático o sube imágenes consecutivas y pulsa generar para ver la animación en bucle fluido.</p>
+            </div>
+
+            <div class="render-overlay" id="renderOverlay" style="display: none;">
+              <div class="render-spinner"></div>
+              <p id="renderStatusText">Renderizando animación anime...</p>
+            </div>
+          </div>
+
+          <!-- Custom Player Controls Bar -->
+          <div class="player-controls-bar" id="playerControlsBar" style="display: none;">
+            <div class="scrubber-row">
+              <input type="range" id="frameScrubber" min="0" max="100" value="0" step="0.1">
+              <div class="time-display">
+                <span id="currentTimeLabel">00:00.00</span> / <span id="totalTimeLabel">00:00.00</span>
+              </div>
+            </div>
+
+            <div class="controls-actions-row">
+              <div class="ctrl-group-left">
+                <button id="playPauseBtn" class="ctrl-btn" title="Reproducir / Pausar">▶</button>
+                <button id="stepBackBtn" class="ctrl-btn mini" title="Fotograma anterior">|◀</button>
+                <button id="stepFwdBtn" class="ctrl-btn mini" title="Fotograma siguiente">▶|</button>
+                <span class="loop-indicator active" title="Bucle infinito">🔁 Loop Activo</span>
+              </div>
+
+              <div class="ctrl-group-right">
+                <label for="speedSelect" class="speed-label">Velocidad:</label>
+                <select id="speedSelect" class="custom-select speed-select">
+                  <option value="0.25">0.25x</option>
+                  <option value="0.5">0.5x</option>
+                  <option value="1.0" selected>1.0x (Normal)</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2.0">2.0x</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Specs Chips -->
+          <div class="tech-specs-grid" id="techSpecsGrid" style="display: none;">
+            <div class="spec-pill">
+              <span class="spec-k">FORMATO</span>
+              <strong class="spec-v">MP4 (H.264) + GIF</strong>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-k">RESOLUCIÓN</span>
+              <strong class="spec-v" id="specResolution">830x576</strong>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-k">CUADROS POR SEG.</span>
+              <strong class="spec-v" id="specFps">24 FPS</strong>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-k">DURACIÓN</span>
+              <strong class="spec-v" id="specDuration">4.0s</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
