@@ -21,3 +21,5 @@ env/
 # Node & Desktop packaging
 node_modules/
 dist/
+backend_bin/
+*.spec

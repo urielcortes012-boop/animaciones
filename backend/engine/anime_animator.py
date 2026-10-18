@@ -19,6 +19,17 @@ class AnimeAnimator:
     def __init__(self, output_dir: str = "outputs"):
         self.output_dir = output_dir
         os.makedirs(output_dir, exist_ok=True)
+        self.ffmpeg_bin = self._resolve_ffmpeg()
+
+    def _resolve_ffmpeg(self) -> str:
+        try:
+            import imageio_ffmpeg
+            exe = imageio_ffmpeg.get_ffmpeg_exe()
+            if exe and os.path.exists(exe):
+                return exe
+        except Exception:
+            pass
+        return "ffmpeg"
 
     def render_cinematic_animation(
         self,
@@ -50,7 +61,7 @@ class AnimeAnimator:
         out_gif = os.path.join(self.output_dir, f"{output_prefix}.gif")
 
         ffmpeg_cmd = [
-            "ffmpeg", "-y",
+            self.ffmpeg_bin, "-y",
             "-f", "rawvideo",
             "-vcodec", "rawvideo",
             "-s", f"{w}x{h}",
@@ -130,7 +141,7 @@ class AnimeAnimator:
         # Generar GIF animado con paleta optimizada
         gif_scale = min(640, w)
         gif_cmd = [
-            "ffmpeg", "-y",
+            self.ffmpeg_bin, "-y",
             "-i", out_mp4,
             "-vf", f"fps=12,scale={gif_scale}:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128[p];[s1][p]paletteuse",
             out_gif
@@ -218,7 +229,7 @@ class AnimeAnimator:
             vf = f"fps={fps}"
 
         cmd_mp4 = [
-            "ffmpeg", "-y",
+            self.ffmpeg_bin, "-y",
             "-f", "concat",
             "-safe", "0",
             "-i", concat_txt,
@@ -236,7 +247,7 @@ class AnimeAnimator:
 
         # Generar GIF animado
         cmd_gif = [
-            "ffmpeg", "-y",
+            self.ffmpeg_bin, "-y",
             "-i", out_mp4,
             "-vf", f"fps={fps},scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128[p];[s1][p]paletteuse",
             out_gif

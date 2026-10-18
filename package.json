@@ -21,6 +21,7 @@
     "files": [
       "main.js",
       "backend/**/*",
+      "backend_bin/**/*",
       "frontend/**/*",
       "assets/**/*",
       "build/**/*"

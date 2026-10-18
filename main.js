@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const fs = require('fs');
 const { spawn } = require('child_process');
 const http = require('http');
 
@@ -8,23 +9,50 @@ let mainWindow = null;
 const BACKEND_PORT = 8000;
 
 function startBackend() {
-  const backendScript = path.join(__dirname, 'backend', 'app.py');
+  const binaryName = process.platform === 'win32' ? 'cineanime-backend.exe' : 'cineanime-backend';
   
-  // Iniciar servidor FastAPI en segundo plano
-  pyProc = spawn('python3', [backendScript], {
+  // Posibles rutas si está empaquetado como binario autónomo (producción)
+  const candidateBinaries = [
+    path.join(process.resourcesPath || '', 'backend_bin', binaryName),
+    path.join(process.resourcesPath || '', 'backend_bin', 'cineanime-backend', binaryName),
+    path.join(__dirname, 'backend_bin', binaryName),
+    path.join(__dirname, 'backend_bin', 'cineanime-backend', binaryName)
+  ];
+
+  let execCmd = null;
+  let execArgs = [];
+
+  for (const binPath of candidateBinaries) {
+    if (fs.existsSync(binPath)) {
+      execCmd = binPath;
+      execArgs = [];
+      console.log(`[Backend]: Usando binario autónomo en ${execCmd}`);
+      break;
+    }
+  }
+
+  if (!execCmd) {
+    // Modo desarrollo: usar python del sistema
+    const isWin = process.platform === 'win32';
+    execCmd = isWin ? 'python' : 'python3';
+    execArgs = [path.join(__dirname, 'backend', 'app.py')];
+    console.log(`[Backend]: Usando script Python del sistema (${execCmd})`);
+  }
+
+  pyProc = spawn(execCmd, execArgs, {
     env: { ...process.env, PORT: String(BACKEND_PORT) }
   });
 
   pyProc.stdout.on('data', (data) => {
-    console.log(`[Python]: ${data}`);
+    console.log(`[Backend]: ${data}`);
   });
 
   pyProc.stderr.on('data', (data) => {
-    console.error(`[Python Err]: ${data}`);
+    console.error(`[Backend Err]: ${data}`);
   });
 
   pyProc.on('close', (code) => {
-    console.log(`[Python] cerrado con código: ${code}`);
+    console.log(`[Backend] cerrado con código: ${code}`);
   });
 }
 

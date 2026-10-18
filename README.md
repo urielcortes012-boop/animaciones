@@ -42,14 +42,23 @@ Diseñado para conectar fotogramas continuos:
 
 ---
 
-## 💻 Aplicación de Escritorio (Descargable para Mac y Windows)
+## 💻 Aplicación de Escritorio (Descarga Directa estilo Play Store)
 
-¡**CineAnime Studio** ahora es una **aplicación de escritorio nativa** con Electron!
+¡**CineAnime Studio** cuenta con instaladores de escritorio listos para instalar con doble clic, **sin necesidad de instalar Python, Node ni tocar la terminal** en la otra computadora!
 
-### 📥 Descargar la Aplicación Instalable
-Puedes encontrar los instaladores listos para usar en la sección de **[Releases de GitHub](https://github.com/urielcortes012-boop/animaciones/releases)**:
-- **Mac (.dmg)**: `CineAnime Studio-1.0.0.dmg` (o `.zip`)
-- **Windows (.exe)**: `CineAnime Studio-Setup-1.0.0.exe`
+### 📥 1. Cómo Descargar e Instalar en Cualquier Computadora
+
+Entra a la sección de **[Releases de GitHub](https://github.com/urielcortes012-boop/animaciones/releases)**:
+- 🪟 **Para Windows**: Descarga `CineAnime Studio-Setup-1.0.0.exe`, ábrelo e instálalo normalmente.
+- 🍏 **Para Mac**: Descarga `CineAnime Studio-1.0.0.dmg`, arrástralo a tu carpeta de Aplicaciones y listo.
+
+---
+
+### ☁️ Compilación Automática en la Nube (GitHub Actions)
+
+El repositorio incluye un flujo automatizado de **GitHub Actions** (`.github/workflows/build-and-release.yml`):
+- **Cero esfuerzo manual**: Cada vez que se crea una versión (Tag `v1.0.0`, `v1.0.1`...), GitHub compila en sus propios servidores de Mac y Windows los instaladores `.dmg` y `.exe` y los adjunta automáticamente al Release para descarga pública.
+- También puedes ir a la pestaña **Actions** en GitHub y pulsar **"Run workflow"** para generar los instaladores cuando quieras.
 
 ---
 
