@@ -8,8 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app-container">
@@ -39,7 +38,7 @@
     <section class="style-showcase-card glass-card">
       <div class="showcase-content">
         <div class="showcase-thumb-box">
-          <img src="/assets/reference_anime.jpg" alt="Estilo Anime de Referencia" class="showcase-img" id="showcaseImg">
+          <img src="../assets/reference_anime.jpg" alt="Estilo Anime de Referencia" class="showcase-img" id="showcaseImg">
           <span class="showcase-badge">ESTILO DE REFERENCIA</span>
         </div>
         <div class="showcase-info">
@@ -89,7 +88,7 @@
 
           <div class="image-source-box">
             <div class="selected-source-preview">
-              <img src="/assets/reference_anime.jpg" id="cinematicPreviewImg" alt="Vista previa">
+              <img src="../assets/reference_anime.jpg" id="cinematicPreviewImg" alt="Vista previa">
               <div class="source-overlay">
                 <span id="sourceLabel">Imagen de Referencia Original</span>
                 <button id="changeImageBtn" class="pill-btn mini-pill">Cambiar Imagen</button>
@@ -275,9 +274,10 @@
             </div>
           </div>
 
-          <!-- Video Viewport Container -->
+          <!-- Video & Canvas Viewport Container -->
           <div class="viewport-box">
-            <video id="mainVideoPlayer" loop playsinline muted>
+            <canvas id="mainCanvasPlayer" width="830" height="576" style="display: none;"></canvas>
+            <video id="mainVideoPlayer" loop playsinline muted style="display: none;">
               <source id="mainVideoSource" src="" type="video/mp4">
             </video>
 
@@ -348,6 +348,7 @@
     </main>
   </div>
 
-  <script src="/app.js"></script>
+  <script src="gif-encoder.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
