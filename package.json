@@ -27,6 +27,7 @@
       "build/**/*"
     ],
     "mac": {
+      "artifactName": "CineAnime.Studio-${version}.${ext}",
       "category": "public.app-category.video",
       "icon": "build/icon.icns",
       "target": [
@@ -35,6 +36,7 @@
       ]
     },
     "win": {
+      "artifactName": "CineAnime.Studio.Setup.${version}.${ext}",
       "target": "nsis",
       "icon": "build/icon.png"
     }

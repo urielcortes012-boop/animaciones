@@ -1,118 +1,105 @@
-# CineAnime Studio 🎬✨
-### Estudio Especializado de Animación Anime Cinemático
+# 🎬 CineAnime Studio - Estudio de Animación Cinemática
 
-**CineAnime Studio** es una herramienta de animación enfocada exclusivamente en la estética visual **Anime Seinen / Drama Realista** de la escena de referencia. Permite animar imágenes individuales con atmósfera viva cinemática o combinar secuencias de imágenes consecutivas para crear animaciones fluidas con control de FPS e interpolación.
+<div align="center">
+  <img src="assets/reference_anime.jpg" alt="CineAnime Logo" width="130" style="border-radius: 50%;">
+  <h3>Estudio Especializado de Animación Anime Cinemático</h3>
+  <p>Software de escritorio de alta fidelidad para dar vida a escenas e imágenes consecutivas en la estética Seinen / Drama Realista sin necesidad de internet.</p>
 
----
-
-## 🌟 Modos de Animación
-
-### 1. ✨ Animación Cinemática de Escena (Luz, Atmósfera y Cámara 3D)
-Anima una imagen fija (por defecto la escena de referencia o cualquier imagen en este estilo que subas) dándole vida con:
-- **Luz Cenital Oscilante**: Simulación de la bombilla cálida del techo con sutiles variaciones de voltaje y sombras vivas.
-- **Partículas Suspendidas en el Haz de Luz**: Motas de polvo flotantes que cruzan el cono de luz.
-- **Movimiento de Cámara (Ken Burns)**: Paneo y zoom 3D continuo diseñado para un bucle perfecto (Loop).
-- **Textura de Grano 35mm**: Acabado analógico cinematográfico característico de largometrajes de anime.
-- **Exportación Dual**: Genera tanto video **MP4 (H.264)** como **GIF animado** listo para descargar.
-
-### 2. 🎞️ Animador de Secuencias de Imágenes Consecutivas
-Diseñado para conectar fotogramas continuos:
-- **Subida de Múltiples Imágenes**: Arrastra o selecciona `frame_01.jpg`, `frame_02.jpg`, etc.
-- **Ejemplo Pre-Cargado**: Incluye una secuencia de 4 fotogramas en el estilo anime listos para probar con 1 clic.
-- **Tira de Fotogramas (Filmstrip)**: Vista previa con numeración (#1, #2...), reordenamiento y eliminación.
-- **Control de Velocidad (FPS)**: 6 FPS (Boceto), 8 FPS (Anime limitado), 12 FPS (Estándar anime en 2s), 24 FPS (Cinemático fluido).
-- **Modos de Bucle**: Bucle continuo o Ping-Pong (ida y vuelta).
-- **Interpolación**: Corte directo (cel tradicional) o suavizado de movimiento (*Frame Blending*).
+  <p>
+    <a href="https://github.com/urielcortes012-boop/animaciones/releases/latest">
+      <img src="https://img.shields.io/badge/Versi%C3%B3n-1.0.0-6366f1?style=for-the-badge" alt="Versión">
+    </a>
+    <img src="https://img.shields.io/badge/Plataformas-macOS%20%7C%20Windows-22c55e?style=for-the-badge" alt="Plataformas">
+    <img src="https://img.shields.io/badge/Modo-100%25%20Offline-f59e0b?style=for-the-badge" alt="Offline">
+  </p>
+</div>
 
 ---
 
-## 🚀 Cómo Iniciar la Aplicación
+## 📥 Descargas Rápidas (Instaladores Oficiales)
 
-### Modo Local (Tu computadora)
-1. **Abrir la terminal en la carpeta del proyecto**:
-   ```bash
-   cd /Users/urielcortes/animaciones/animaciones
-   ```
-2. **Iniciar el servidor**:
-   ```bash
-   ./start.sh
-   ```
-3. **Abrir en tu navegador**:
-   Visita: **[http://localhost:8000](http://localhost:8000)**
+Descarga la versión lista para instalar en tu computadora:
+
+| Sistema Operativo | Instalador | Formato | Enlace Directo |
+| :--- | :--- | :--- | :--- |
+| **🍎 macOS** | Versión 1.0.0 | `.dmg` | [**Descargar para Mac**](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio-1.0.0.dmg) *(~92 MB)* |
+| **🪟 Windows** | Versión 1.0.0 | `.exe` | [**Descargar para Windows**](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio.Setup.1.0.0.exe) *(~85 MB)* |
+
+> 📌 También puedes ver todas las versiones y notas de actualización en la [sección de Releases](https://github.com/urielcortes012-boop/animaciones/releases).
 
 ---
 
-## 💻 Aplicación de Escritorio (Descarga Directa estilo Play Store)
+## 🚀 Guía de Instalación
 
-¡**CineAnime Studio** cuenta con instaladores de escritorio listos para instalar con doble clic, **sin necesidad de instalar Python, Node ni tocar la terminal** en la otra computadora!
+### 🍎 En macOS
+1. Descarga el archivo [`CineAnime.Studio-1.0.0.dmg`](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio-1.0.0.dmg).
+2. Abre el archivo `.dmg` con doble clic.
+3. Arrastra el icono de **CineAnime Studio** hacia tu carpeta de **Aplicaciones**.
+4. *(Primera ejecución)*: Si macOS te muestra una advertencia de desarrollador no verificado, haz **clic derecho** sobre la aplicación en Aplicaciones y selecciona **"Abrir"**.
 
-### 📥 1. Cómo Descargar e Instalar en Cualquier Computadora
-
-Entra a la sección de **[Releases de GitHub](https://github.com/urielcortes012-boop/animaciones/releases)**:
-- 🪟 **Para Windows**: Descarga `CineAnime Studio-Setup-1.0.0.exe`, ábrelo e instálalo normalmente.
-- 🍏 **Para Mac**: Descarga `CineAnime Studio-1.0.0.dmg`, arrástralo a tu carpeta de Aplicaciones y listo.
-
----
-
-### ☁️ Compilación Automática en la Nube (GitHub Actions)
-
-El repositorio incluye un flujo automatizado de **GitHub Actions** (`.github/workflows/build-and-release.yml`):
-- **Cero esfuerzo manual**: Cada vez que se crea una versión (Tag `v1.0.0`, `v1.0.1`...), GitHub compila en sus propios servidores de Mac y Windows los instaladores `.dmg` y `.exe` y los adjunta automáticamente al Release para descarga pública.
-- También puedes ir a la pestaña **Actions** en GitHub y pulsar **"Run workflow"** para generar los instaladores cuando quieras.
+### 🪟 En Windows
+1. Descarga el archivo [`CineAnime.Studio.Setup.1.0.0.exe`](https://github.com/urielcortes012-boop/animaciones/releases/download/v1.0.0/CineAnime.Studio.Setup.1.0.0.exe).
+2. Haz doble clic en el instalador y sigue las instrucciones en pantalla.
+3. *(Aviso SmartScreen)*: Si aparece la pantalla azul *"Windows protegió su PC"*, pulsa en **"Más información"** y luego en **"Ejecutar de todas formas"**.
+4. Se creará automáticamente un acceso directo en tu Escritorio y Menú Inicio.
 
 ---
 
-### 🛠️ Comandos de Construcción y Ejecución Local
+## ✨ Características Principales
 
-Si deseas probarla o compilarla tú mismo en cualquier computadora:
+- 🎞️ **Animador de Secuencias de Imágenes Consecutivas**:
+  - Subida de fotogramas seriados (`frame_01.jpg`, `frame_02.jpg`...).
+  - Incluye secuencia de 4 fotogramas anime de prueba precargada.
+  - Tira de fotogramas (*filmstrip*) interactiva con reordenamiento y eliminación.
+  - Control de velocidad: **6 FPS**, **8 FPS**, **12 FPS** (anime en 2s), y **24 FPS** (cinemático).
+  - Modos de bucle continuo (*Loop*) y vaivén (*Ping-Pong*).
+  - Interpolación: corte directo de cel tradicional o suavizado de fotogramas (*Frame Blending*).
 
-1. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
+- ✨ **Animación Cinemática de Escena**:
+  - Oscilación de luz cenital con variaciones de voltaje de bombilla cálida.
+  - Partículas de polvo flotantes que cruzan el cono luminoso.
+  - Movimiento 3D de cámara tipo Ken Burns continuo y sin cortes.
+  - Textura analógica de grano de película 35mm.
 
-2. **Abrir la aplicación en modo desarrollo**:
-   ```bash
-   npm start
-   ```
+- 🎬 **Exportación Dual Instantánea**:
+  - Video **MP4 (H.264)** de alta calidad con compatibilidad universal.
+  - **GIF animado** optimizado con paleta personalizada de 128 colores.
 
-3. **Generar instalador para Mac (.dmg)**:
-   ```bash
-   npm run build:mac
-   ```
-   *(El instalador generado se guardará en la carpeta `dist/`)*
-
-4. **Generar instalador para Windows (.exe)**:
-   ```bash
-   npm run build:win
-   ```
-   *(El instalador generado se guardará en la carpeta `dist/`)*
+- 🔌 **100% Autónomo y Offline**:
+  - Toda la renderización se realiza localmente en tu equipo sin depender de internet ni servidores de terceros.
 
 ---
 
-### 🌐 Despliegue en la Nube (Opcional - Enlace Web)
+## 🛠️ Instalación para Desarrolladores
 
-Si también prefieres acceder vía navegador web desde cualquier dispositivo sin instalar nada:
-1. Entra a **[Render.com](https://render.com)** y conecta tu repositorio `animaciones`.
-2. Selecciona **Web Service** gratuito; se usará el `Dockerfile` automáticamente.
+Si deseas clonar el proyecto para modificar o auditar el código:
 
----
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/urielcortes012-boop/animaciones.git
+cd animaciones
 
-## 📂 Estructura del Proyecto
+# 2. Instalar dependencias
+npm install
+pip install -r requirements.txt
 
+# 3. Iniciar en modo desarrollo
+npm start
+
+# 4. Compilar instaladores
+npm run build:mac   # Genera instalador .dmg para macOS
+npm run build:win   # Genera instalador .exe para Windows
 ```
-animaciones/
-├── backend/
-│   ├── app.py                     # Servidor FastAPI especializado
-│   └── engine/
-│       └── anime_animator.py      # Motor de animación cinemática y secuencias
-├── frontend/
-│   ├── index.html                 # Interfaz dark studio especializada
-│   ├── styles.css                 # Estilos cinemáticos oscuros
-│   └── app.js                     # Controlador interactivo, filmstrip y reproductor
-├── assets/
-│   ├── reference_anime.jpg        # Imagen de referencia del estilo visual
-│   └── sample_sequence/           # 4 fotogramas consecutivos de ejemplo
-├── outputs/                       # Videos MP4 y GIFs generados
-└── README.md
-```
+
+---
+
+## ☁️ Compilación Automática (GitHub Actions)
+
+El repositorio incluye integración continua con **GitHub Actions** (`.github/workflows/build-and-release.yml`):
+- Al etiquetar una nueva versión (ej. `v1.0.0`), GitHub crea máquinas virtuales de Windows y Mac en la nube, compila los instaladores `.exe` y `.dmg`, y los publica automáticamente en la sección de Releases sin necesidad de compilar manualmente en múltiples computadoras.
+
+---
+
+<div align="center">
+  <sub>Desarrollado por <b>Uriel Cortés</b> • CineAnime Studio</sub>
+</div>
